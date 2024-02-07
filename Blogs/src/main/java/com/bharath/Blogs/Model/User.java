@@ -2,6 +2,7 @@ package com.bharath.Blogs.Model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -12,6 +13,7 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @Table(name = "user")
+@Builder
 public class User {
 
     @Id
@@ -19,7 +21,10 @@ public class User {
     private int id;
 
     private String userName;
+
+    @Column(nullable = false)
     private String passWord;
+
     private String firstName;
     private String lastName;
 
