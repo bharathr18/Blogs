@@ -28,7 +28,7 @@ public class UserController {
     }
 
     @PutMapping("/update/{userId}")
-    public String updateUser(@PathVariable int userId, @RequestBody UserPasswordChangeDto userPasswordChangeDto)
+    public String updateUser(@RequestParam int userId, @RequestBody UserPasswordChangeDto userPasswordChangeDto)
     {
         return userService.updateUser(userId, userPasswordChangeDto);
     }

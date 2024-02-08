@@ -49,7 +49,7 @@ public class UserService {
 
     public String updateUser(int userId, UserPasswordChangeDto userPasswordChangeDto)
     {
-            User user = userRepository.findById(userId).orElseThrow(() -> new ResourceNotFoundException("User does not exist with id: " + userId));
+            User user = userRepository.findById(userId).get();
 
             user.setPassWord(userPasswordChangeDto.getPassCord());
 
